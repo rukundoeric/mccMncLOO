@@ -16,6 +16,14 @@ app
   }))
   .use(cors())
   .use('/api', api)
+  .get('/', (_, res) => {
+     res.status(200).send({
+      status: 200,
+      error: {
+        message: 'Welcome!',
+      }
+    });
+  })
   .use((_, res) => {
     res.status(404).send({
       status: 404,
